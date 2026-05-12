@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WC26 Shop - Detalii Produs</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="container nav-container">
+
+            <button class="hamburger" id="hamburgerBtn">☰</button>
+
+            <a href="index.html" class="logo">
+                <img src="logonobg2.jpg" alt="Yazy Jersey Logo">
+            </a>
+
+            <nav class="mobile-nav" id="mobileNav">
+                <ul class="nav-links">
+                    <li><a href="index.html#acasa">Acasă</a></li>
+                    <li><a href="index.html#colectie">Colecție Naționale</a></li>
+                    <li><a href="index.html#cluburi">Colecție Cluburi</a></li>
+                    <li><a href="#" id="openContactBtn">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <select class="currency-switcher" id="currencySwitcher">
+                    <option value="RON">RON</option>
+                    <option value="EUR">EUR</option>
+                    <option value="USD">USD</option>
+                </select>
+
+                <button class="cart-btn" id="openCartBtn">🛒 Coșul meu (<span id="cartCount">0</span>)</button>
+            </div>
+
+        </div>
+    </header>
+
+    <main class="container product-page">
+
+        <div class="product-gallery">
+            <img id="mainImage" src="https://placehold.co/800x800/eeeeee/333333?text=Incarcare..."
+                alt="Tricou Principal" class="main-image">
+
+            <div class="thumbnail-container">
+                <img src="" alt="Thumbnail 1" class="thumbnail active" onclick="changeImage(this)" id="thumb-0">
+                <img src="" alt="Thumbnail 2" class="thumbnail" onclick="changeImage(this)" id="thumb-1">
+                <img src="" alt="Thumbnail 3" class="thumbnail" onclick="changeImage(this)" id="thumb-2">
+                <img src="" alt="Thumbnail 4" class="thumbnail" onclick="changeImage(this)" id="thumb-3">
+                <img src="" alt="Thumbnail 5" class="thumbnail" onclick="changeImage(this)" id="thumb-4">
+            </div>
+        </div>
+
+        <div class="product-details">
+            <span class="product-category" id="prod-categorie">Echipa Națională</span>
+            <h1 class="product-title" id="prod-titlu">Se încarcă produsul...</h1>
+            <div class="product-price">
+                <!-- Le-am dat ID-uri specifice pentru a le găsi ușor din Javascript -->
+                <del class="dynamic-price" id="pret-vechi-pagina-produs" data-price="200">200 RON</del>
+                <span class="dynamic-price" id="pret-nou-pagina-produs" data-price="150">150 RON</span>
+            </div>
+
+            <p class="product-description" id="prod-descriere">
+                Așteaptă un moment, detaliile se încarcă.
+            </p>
+
+            <div class="size-selection">
+                <h3>Alege Mărimea:</h3>
+                <div class="size-options">
+                    <button class="size-btn" onclick="alegeMarimea(this)">S</button>
+                    <button class="size-btn" onclick="alegeMarimea(this)">M</button>
+                    <button class="size-btn active" onclick="alegeMarimea(this)">L</button>
+                </div>
+                <p id="stockStatus" class="stock-status"></p>
+            </div>
+            <div class="customization-section"
+                style="margin-bottom: 25px; padding: 15px; background: #f8f9fa; border-radius: 8px;">
+                <h3 style="font-size: 1rem; margin-bottom: 10px;">Personalizare Opțională:</h3>
+
+                <label style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px; cursor: pointer;">
+                    <input type="checkbox" id="checkNume" onchange="togglePersonalizare()"
+                        style="width: 18px; height: 18px;">
+                    <span>Nume + Număr jucător</span>
+                </label>
+
+                <select id="selectNume" style="display: none;">
+                    <option value="" disabled selected>Alege un jucător...</option>
+                </select>
+
+                <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                    <input type="checkbox" id="checkBadge" onchange="togglePersonalizare()"
+                        style="width: 18px; height: 18px;">
+                    <span>Insignă Oficială Cupa Mondială</span>
+                </label>
+            </div>
+
+            <button class="cta-btn add-to-cart-large" onclick="adaugaInCos()">🛒 Adaugă în coș</button>
+            <div class="trust-process-section">
+                <h3>🛡️ Cum cumperi în siguranță?</h3>
+                <div class="process-steps">
+                    <div class="step">
+                        <span class="step-icon">1️⃣</span>
+                        <p><strong>Comanzi pe site:</strong> Adaugi tricoul în coș și completezi datele. Nu plătești
+                            nimic acum!</p>
+                    </div>
+                    <div class="step">
+                        <span class="step-icon">2️⃣</span>
+                        <p><strong>Primești Link OLX:</strong> Îți generăm o ofertă personalizată și îți trimitem
+                            link-ul pe email.</p>
+                    </div>
+                    <div class="step">
+                        <span class="step-icon">3️⃣</span>
+                        <p><strong>Verifici Coletul:</strong> Curierul vine la tine, deschizi cutia și verifici tricoul.
+                        </p>
+                    </div>
+                    <div class="step">
+                        <span class="step-icon">4️⃣</span>
+                        <p><strong>Plătești la final:</strong> Abia după ce te-ai convins că e totul ok, îi dai banii
+                            curierului.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content" style="border-bottom: none; padding-bottom: 20px;">
+
+                <div class="footer-faq" style="flex: 1; max-width: 450px; padding-right: 20px;">
+                    <h3 style="color: var(--white); margin-bottom: 20px; font-size: 1.2rem; text-transform: uppercase;">
+                        Întrebări Frecvente</h3>
+                    <div class="faq-accordion">
+                        <details class="faq-item">
+                            <summary>Cum plasez o comandă?</summary>
+                            <div class="faq-answer">
+                                <p>Este simplu: adaugi produsele în coș și completezi formularul cu numele și email-ul
+                                    tău. Nu îți cerem datele cardului! După plasarea comenzii, te vom contacta prin
+                                    email sau WhatsApp cu link-ul securizat pentru finalizarea livrării.</p>
+                            </div>
+                        </details>
+
+                        <details class="faq-item">
+                            <summary>Unde plătesc? Pe site sau pe OLX?</summary>
+                            <div class="faq-answer">
+                                <p><strong>NU plătești nimic pe site-ul nostru.</strong> Plata se face exclusiv prin
+                                    sistemul securizat al partenerilor noștri (OLX/Vinted) sau direct la curier
+                                    (Ramburs), abia după ce ai verificat coletul.</p>
+                            </div>
+                        </details>
+
+                        <details class="faq-item">
+                            <summary>Ce înseamnă "Livrare cu Verificare"?</summary>
+                            <div class="faq-answer">
+                                <p>Înseamnă siguranță 100%. Când curierul ajunge la ușa ta, ai dreptul să deschizi
+                                    coletul timp de câteva minute pentru a verifica tricoul. Dacă nu îți place sau
+                                    mărimea nu corespunde, îl poți refuza pe loc fără să plătești nimic.</p>
+                            </div>
+                        </details>
+
+                        <details class="faq-item">
+                            <summary>Cât timp aștept până vine comanda?</summary>
+                            <div class="faq-answer">
+                                <p>Procesăm comanda în maxim 24 de ore. Odată predat curierului prin OLX, coletul ajunge
+                                    la tine în termen de 2-5 zile lucrătoare, oriunde în România.</p>
+                            </div>
+                        </details>
+
+                        <details class="faq-item">
+                            <summary>Este sigur să cumpăr prin OLX?</summary>
+                            <div class="faq-answer">
+                                <p>Este cea mai sigură metodă de comerț online din România. OLX acționează ca un garant:
+                                    banii tăi sunt protejați, iar livrarea este monitorizată oficial. Astfel, eliminăm
+                                    orice risc de fraudă sau produse neconforme.</p>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <div class="footer-logo"
+                    style="flex: 1; text-align: right; display: flex; flex-direction: column; justify-content: flex-start;">
+
+                    <img src="logonobg2.jpg" alt="Yazy Logo Mobile" class="mobile-footer-img">
+
+                    <h2>YAZY <span>JERSEY</span></h2>
+                    <p style="color: #aaaaaa; font-size: 0.95rem; margin-top: 10px;">Singurul magazin de care ai
+                        nevoie
+                        pentru echipamente premium.</p>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 YAZY JERSEY</p>
+                <div class="legal-bottom-links">
+                    <a href="retur.html">Politica de rambursare</a> &bull;
+                    <a href="confidentialitate.html">Politica de confidențialitate</a> &bull;
+                    <a href="termeni.html">Termenii serviciului</a> &bull;
+                    <a href="livrare.html">Politică de livrare</a> &bull;
+                    <a href="https://anpc.ro/" target="_blank">ANPC</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Declarăm o variabilă globală pentru a ști ce produs este deschis
+        let produsAlesGlobal = null;
+
+        function changeImage(element) {
+            document.getElementById('mainImage').src = element.src;
+            let thumbnails = document.querySelectorAll('.thumbnail');
+            thumbnails.forEach(thumb => thumb.classList.remove('active'));
+            element.classList.add('active');
+        }
+
+        // Funcția actualizată pentru mărimi și stoc
+        function alegeMarimea(element) {
+            let butoaneMarime = document.querySelectorAll('.size-btn');
+            butoaneMarime.forEach(buton => buton.classList.remove('active'));
+            element.classList.add('active');
+
+            // Verificăm stocul pentru mărimea selectată
+            let marime = element.innerText;
+            let stockText = document.getElementById('stockStatus');
+            let btnAdauga = document.querySelector('.add-to-cart-large');
+
+            if (produsAlesGlobal && produsAlesGlobal.stoc) {
+                let cantitate = produsAlesGlobal.stoc[marime];
+
+                if (cantitate > 0) {
+                    if (cantitate <= 3) {
+                        stockText.innerText = `🔥 Grăbește-te, doar ${cantitate} în stoc!`;
+                    } else {
+                        stockText.innerText = "✅ În stoc";
+                    }
+                    stockText.className = "stock-status stock-in";
+                    btnAdauga.disabled = false;
+                    btnAdauga.style.opacity = "1";
+                    btnAdauga.style.cursor = "pointer";
+                } else {
+                    stockText.innerText = "❌ Stoc epuizat";
+                    stockText.className = "stock-status stock-out";
+                    btnAdauga.disabled = true;
+                    btnAdauga.style.opacity = "0.5";
+                    btnAdauga.style.cursor = "not-allowed";
+                }
+            }
+        }
+
+        // --- SISTEMUL DE MONEDĂ (CURRENCY SWITCHER) ---
+        const exchangeRates = {
+            RON: 1,
+            EUR: 0.20,
+            USD: 0.22
+        };
+
+        const currencySymbols = {
+            RON: " RON",
+            EUR: "€",
+            USD: "$"
+        };
+
+        function updatePrices(selectedCurrency) {
+            const rate = exchangeRates[selectedCurrency];
+            const symbol = currencySymbols[selectedCurrency];
+            const priceElements = document.querySelectorAll('.dynamic-price');
+
+            priceElements.forEach(el => {
+                const basePrice = parseFloat(el.getAttribute('data-price'));
+                if (isNaN(basePrice)) return;
+
+                const newPrice = basePrice * rate;
+
+                if (selectedCurrency === 'RON') {
+                    el.innerText = Math.round(newPrice) + symbol;
+                } else {
+                    el.innerText = symbol + newPrice.toFixed(2);
+                }
+            });
+        }
+
+        const currencySwitcher = document.getElementById('currencySwitcher');
+        if (currencySwitcher) {
+            currencySwitcher.addEventListener('change', function () {
+                const selectedCurrency = this.value;
+                localStorage.setItem('preferredCurrency', selectedCurrency);
+                updatePrices(selectedCurrency);
+            });
+        }
+        // ----------------------------------------------
+
+        // Calculează prețul în timp real dacă bifează opțiuni
+        function togglePersonalizare() {
+            const checkNume = document.getElementById('checkNume').checked;
+            const checkBadge = document.getElementById('checkBadge').checked;
+            const selectNume = document.getElementById('selectNume');
+
+            // Arată sau ascunde drop-down-ul
+            selectNume.style.display = checkNume ? 'block' : 'none';
+
+            // Re-aplicăm valuta corectă (în caz că pe viitor adaugi bani extra pentru personalizare)
+            const savedCurrency = localStorage.getItem('preferredCurrency') || 'RON';
+            updatePrices(savedCurrency);
+        }
+
+        // Baza de date
+        const bazaDeDateTricouri = {
+            'argentina': {
+                titlu: 'Tricou Home Argentina 2026',
+                pret: 150,
+                categorie: 'Echipa Națională a Argentinei',
+                descriere: 'Tricoul oficial de acasă al campionilor mondiali. Poartă celebrele dungi alb-albastre cu mândrie. Material premium care lasă pielea să respire.',
+                stoc: { 'S': 2, 'M': 2, 'L': 1 },
+                jucatori: ['MESSI 10'],
+                poze: [
+                    'argentina/arg-away-front.png',
+                    'argentina/arg-away-back.png',
+                    'argentina/pack-detaliat-arg-away.png',
+                    'gid-de-marimi.png',
+                    'https://placehold.co/800x800/aaaaaa/333333?text=Argentina+5'
+                ]
+            },
+            'portugalia': {
+                titlu: 'Tricou Home Portugalia 2026',
+                pret: 150,
+                categorie: 'Echipa Națională a Portugaliei',
+                descriere: 'Susține naționala Portugaliei cu noul echipament roșu-verde creat pentru turneul din SUA, Canada și Mexic.',
+                stoc: { 'S': 2, 'M': 2, 'L': 1 },
+                jucatori: ['RONALDO 7'],
+                poze: [
+                    'portugal/port-away-front.png',
+                    'portugal/port-away-back.png',
+                    'portugal/pack-detaliat-port-away.png',
+                    'gid-de-marimi.png',
+                    'https://placehold.co/800x800/aaaaaa/333333?text=Portugalia+5'
+                ]
+            },
+            'brazil': {
+                titlu: 'Tricou Home Brazilia 2026',
+                pret: 150,
+                categorie: 'Echipa Națională a Braziliei',
+                descriere: 'Legendarul tricou galben (Seleção) revine cu un design modernizat. Fii gata pentru spectacolul brazilian!',
+                stoc: { 'S': 2, 'M': 2, 'L': 1 },
+                jucatori: ['VINI JR. 7', 'NEYMAR JR. 10', 'RAPHINHA 11'],
+                poze: [
+                    'brazil/brazil-away-front.png',
+                    'brazil/brazil-away-back.png',
+                    'brazil/pack-detaliat-brazil-away.png',
+                    'gid-de-marimi.png',
+                    'https://placehold.co/800x800/aaaaaa/333333?text=Brazilia+5'
+                ]
+            },
+            'spania': {
+                titlu: 'Tricou Home Spania 2026',
+                pret: 150,
+                categorie: 'Echipa Națională a Spaniei',
+                descriere: 'Roșul vibrant al La Furia Roja. Tricou conceput pentru confort maxim pe durata celor 90 de minute de joc.',
+                stoc: { 'S': 2, 'M': 2, 'L': 1 },
+                jucatori: ['YAMAL 19'],
+                poze: [
+                    'spain/spain-home-front.png',
+                    'spain/spain-home-back.png',
+                    'spain/pack-detaliat-spania-home.png',
+                    'gid-de-marimi.png',
+                    'https://placehold.co/800x800/aaaaaa/333333?text=Spania+5'
+                ]
+            },
+            'spania_away': {
+                titlu: 'Tricou Away Spania 2026',
+                pret: 150,
+                categorie: 'Echipa Națională a Spaniei',
+                descriere: 'Noul echipament de deplasare (Away) al naționalei Spaniei. Un design proaspăt și modern conceput pentru turneul din 2026.',
+                stoc: { 'S': 2, 'M': 2, 'L': 1 },
+                jucatori: ['YAMAL 19'],
+                poze: [
+                    'spain/spain-away-front.png',
+                    'spain/spain-away-back.png',
+                    'spain/pack-detaliat-spania-away.png',
+                    'gid-de-marimi.png',
+                    'https://placehold.co/800x800/aaaaaa/333333?text=Spania+Away+5'
+                ]
+            },
+            'franta': {
+                titlu: 'Tricou Home Franța 2026',
+                pret: 150,
+                categorie: 'Echipa Națională a Franței',
+                descriere: 'Albastrul elegant al "Cocoșului Galic". Descoperă noul tricou al Franței, echipat cu cele mai noi tehnologii textile.',
+                stoc: { 'S': 2, 'M': 2, 'L': 1 },
+                jucatori: ['MBAPPE 9'],
+                poze: [
+                    'france/france-away-front.png',
+                    'france/france-away-back.png',
+                    'france/pack-detaliat-franta-away.png',
+                    'gid-de-marimi.png',
+                    'https://placehold.co/800x800/aaaaaa/333333?text=Franta+5'
+                ]
+            },
+            'barca_roz': {
+                titlu: 'Tricou Barcelona Away (Roz) 2025',
+                pret: 150,
+                categorie: 'Echipe de Club',
+                descriere: 'Noul echipament de deplasare FC Barcelona. O culoare îndrăzneață și vibrantă care celebrează stilul de joc catalan.',
+                stoc: { 'S': 2, 'M': 2, 'L': 1 },
+                jucatori: ['YAMAL 19', 'LEWANDOWSKI 9', 'PEDRI 8', 'GAVI 6', 'RAPHINHA 11'],
+                poze: [
+                    'cluburi/barcelona-roz.png',
+                    'https://placehold.co/800x800/dddddd/333333?text=Barca+Roz+2',
+                    'https://placehold.co/800x800/cccccc/333333?text=Barca+Roz+3',
+                    'gid-de-marimi.png',
+                    'https://placehold.co/800x800/aaaaaa/333333?text=Barca+Roz+5'
+                ]
+            },
+            'barca_kobe': {
+                titlu: 'Tricou Barca x Kobe Bryant (Training) 2025',
+                pret: 150,
+                categorie: 'Ediție Specială',
+                descriere: 'O colaborare exclusivă și rară între FC Barcelona și legenda Kobe Bryant. Model de antrenament ediție limitată pentru adevărații fani.',
+                stoc: { 'S': 2, 'M': 1, 'L': 1 },
+                jucatori: ['BRYANT 24', 'MAMBA 8', 'YAMAL 19', 'LEWANDOWSKI 9'],
+                poze: [
+                    'cluburi/barcelona-kobe.png',
+                    'https://placehold.co/800x800/dddddd/333333?text=Kobe+2',
+                    'https://placehold.co/800x800/cccccc/333333?text=Kobe+3',
+                    'gid-de-marimi.png',
+                    'https://placehold.co/800x800/aaaaaa/333333?text=Kobe+5'
+                ]
+            },
+            'real_away': {
+                titlu: 'Tricou Away Real Madrid 2025',
+                pret: 150,
+                categorie: 'Echipe de Club',
+                descriere: 'Echipamentul de deplasare pentru Los Blancos în noul sezon. Combinație de materiale ultra-premium pentru confort pe teren sau în oraș.',
+                stoc: { 'S': 2, 'M': 2, 'L': 1 },
+                jucatori: ['MBAPPE 9', 'VINICIUS JR 7', 'BELLINGHAM 5', 'VALVERDE 8', 'RODRYGO 11'],
+                poze: [
+                    'cluburi/madrid.png',
+                    'https://placehold.co/800x800/dddddd/333333?text=Real+Away+2',
+                    'https://placehold.co/800x800/cccccc/333333?text=Real+Away+3',
+                    'gid-de-marimi.png',
+                    'https://placehold.co/800x800/aaaaaa/333333?text=Real+Away+5'
+                ]
+            }
+        };
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const idCurent = urlParams.get('id');
+
+        if (idCurent && bazaDeDateTricouri[idCurent]) {
+            produsAlesGlobal = bazaDeDateTricouri[idCurent];
+
+            const selectElement = document.getElementById('selectNume');
+            if (produsAlesGlobal.jucatori && produsAlesGlobal.jucatori.length > 0) {
+                produsAlesGlobal.jucatori.forEach(jucator => {
+                    let option = document.createElement('option');
+                    option.value = jucator;
+                    option.innerText = jucator;
+                    selectElement.appendChild(option);
+                });
+            }
+
+            document.title = produsAlesGlobal.titlu + " - WC26 Shop";
+            document.getElementById('prod-titlu').innerText = produsAlesGlobal.titlu;
+            document.getElementById('prod-categorie').innerText = produsAlesGlobal.categorie;
+            document.getElementById('prod-descriere').innerText = produsAlesGlobal.descriere;
+            document.getElementById('mainImage').src = produsAlesGlobal.poze[0];
+
+            for (let i = 0; i < 5; i++) {
+                document.getElementById('thumb-' + i).src = produsAlesGlobal.poze[i];
+            }
+
+            // --- INSERARE PREȚ ȘI CLASE PENTRU MONEDĂ (ACTUALIZAT PENTRU REDUCERE) ---
+
+            // 1. Identificăm cele două elemente de preț (cel tăiat și cel nou)
+            let elPretVechi = document.getElementById('pret-vechi-pagina-produs');
+            let elPretNou = document.getElementById('pret-nou-pagina-produs');
+
+            // 2. Luăm prețul nou din baza de date (ex: 150)
+            let pretNouCurat = parseFloat(produsAlesGlobal.pret);
+            let pretVechiCurat = 200; // Prețul tău standard înainte de reducere
+
+            // 3. Setăm atributele data-price pentru ca scriptul de conversie să știe ce să calculeze
+            elPretVechi.setAttribute('data-price', pretVechiCurat);
+            elPretNou.setAttribute('data-price', pretNouCurat);
+
+            // 4. Punem textele inițiale în RON
+            elPretVechi.innerText = pretVechiCurat + " RON";
+            elPretNou.innerText = pretNouCurat + " RON";
+
+            // 5. Verificăm ce monedă are utilizatorul salvată și actualizăm imediat vizual
+            const savedCurrency = localStorage.getItem('preferredCurrency') || 'RON';
+            updatePrices(savedCurrency);
+
+        } else {
+            document.getElementById('prod-titlu').innerText = "Produsul nu a fost găsit!";
+            document.getElementById('prod-descriere').innerText = "Întoarce-te pe pagina principală pentru a vedea colecția.";
+            document.getElementById('prod-pret').innerText = "";
+            document.querySelector('.product-gallery').style.display = 'none';
+        }
+    </script>
+
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2>Coșul Meu</h2>
+            <button class="close-cart-btn" id="closeCartBtn">&times;</button>
+        </div>
+        <div class="cart-items-container" id="cartItemsContainer">
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotalPrice">0 RON</span>
+            </div>
+            <button class="cta-btn checkout-btn" id="checkoutBtn">Finalizează Comanda</button>
+        </div>
+    </div>
+    <div class="modal-overlay" id="contactModal">
+        <div class="modal-content" style="max-width: 450px;">
+            <span class="close-modal-btn" id="closeModalBtn">&times;</span>
+            <h2 style="margin-bottom: 10px;">Aproape gata! 🚀</h2>
+            <p style="font-size: 0.9rem; color: #555; text-align: left; margin-bottom: 20px;">
+                Completează datele de mai jos. Vei primi pe email în cel mai scurt timp un link personalizat și
+                securizat prin <strong>OLX</strong> pentru a finaliza plata și detaliile de livrare în maximă siguranță.
+            </p>
+
+            <form action="https://formsubmit.co/nane44stefan@gmail.com" method="POST" id="checkoutForm"
+                style="text-align: left;">
+
+                <input type="hidden" name="_subject" value="🚨 COMANDĂ NOUĂ TRICOURI!">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="Detalii_Comanda" id="formComandaAscunsa">
+                <input type="hidden" name="Total_de_Plata" id="formTotalAscuns">
+
+                <div style="margin-bottom: 15px;">
+                    <label style="font-weight: 600; font-size: 0.9rem;">Numele tău complet:</label>
+                    <input type="text" name="Nume" required
+                        style="width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 5px;">
+                </div>
+
+                <div style="margin-bottom: 15px;">
+                    <label style="font-weight: 600; font-size: 0.9rem;">Adresa ta de Email (Aici primești link-ul
+                        OLX):</label>
+                    <input type="email" name="Email" required
+                        style="width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 5px;">
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <label style="font-weight: 600; font-size: 0.9rem;">Număr de telefon (Opțional):</label>
+                    <input type="tel" name="Telefon"
+                        style="width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 5px;">
+                </div>
+
+                <button type="submit" class="cta-btn" style="width: 100%; border: none; cursor: pointer;">Trimite
+                    Comanda</button>
+                <p
+                    style="font-size: 0.8rem; color: #888; text-align: center; margin-top: 15px; margin-bottom: 0; line-height: 1.4;">
+                    💡 <strong>Sfat:</strong> Asigură-te că datele introduse sunt corecte, pentru a te putea contacta și
+                    a-ți trimite rapid link-ul comenzii!
+                </p>
+            </form>
+
+        </div>
+    </div>
+    <div class="modal-overlay" id="generalContactModal">
+        <div class="modal-content">
+            <span class="close-modal-btn" id="closeGeneralModalBtn">&times;</span>
+            <h2>Contactează-ne 💬</h2>
+            <p>Ai o întrebare legată de tricouri, mărimi sau livrare? Dă-ne un mesaj pe oricare dintre platformele de
+                mai jos:</p>
+
+            <div class="social-links">
+                <a href="https://wa.me/40756522096" target="_blank" class="social-btn whatsapp">🟢 WhatsApp</a>
+                <a href="https://www.instagram.com/yazyjersey/" target="_blank" class="social-btn instagram">🟣
+                    Instagram</a>
+                <a href="https://www.tiktok.com/@yazyjersey?lang=ro-RO" target="_blank" class="social-btn tiktok">⚫
+                    TikTok</a>
+                <a href="https://www.vinted.ro/member/280040686" target="_blank" class="social-btn vinted">🛍️
+                    Vinted</a>
+                <a href="https://www.olx.ro/oferte/user/vnCBp/" target="_blank" class="social-btn olx">🛒 Profil OLX</a>
+            </div>
+
+            <p class="modal-footer-text">Răspundem în cel mai scurt timp posibil!</p>
+        </div>
+    </div>
+    <script src="cart.js"></script>
+</body>
+
+</html>
