@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cupa Mondială 2026 - Magazin Tricouri</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Importăm fontul Poppins pentru un aspect modern -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Bara de Navigare -->
+    <header class="navbar">
+        <div class="container nav-container">
+
+            <button class="hamburger" id="hamburgerBtn">☰</button>
+
+            <a href="index.html" class="logo">
+                <img src="logonobg2.jpg" alt="Yazy Jersey Logo">
+            </a>
+
+            <nav class="mobile-nav" id="mobileNav">
+                <ul class="nav-links">
+                    <li><a href="index.html#acasa">Acasă</a></li>
+                    <li><a href="index.html#colectie">Colecție Naționale</a></li>
+                    <li><a href="index.html#cluburi">Colecție Cluburi</a></li>
+                    <li><a href="#" id="openContactBtn">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <select class="currency-switcher" id="currencySwitcher">
+                    <option value="RON">RON</option>
+                    <option value="EUR">EUR</option>
+                    <option value="USD">USD</option>
+                </select>
+
+                <button class="cart-btn" id="openCartBtn">🛒 Coșul meu (<span id="cartCount">0</span>)</button>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Secțiunea Hero -->
+    <section class="hero" id="acasa">
+        <div class="container hero-content">
+            <h1>Echipează-te pentru <span>2026</span></h1>
+            <p>Descoperă noile tricouri oficiale pentru Cupa Mondială din SUA, Canada și Mexic. Poartă culorile țării
+                tale cu mândrie!</p>
+            <a href="#colectie" class="cta-btn">Vezi Colecția</a>
+        </div>
+    </section>
+
+    <!-- Secțiunea de Produse -->
+    <section class="products-section" id="colectie">
+        <div class="container">
+            <h2 class="section-title">Cele Mai Căutate Tricouri</h2>
+            <div class="products-grid">
+
+                <!-- Produs 1 -->
+                <div class="product-card" onclick="window.location.href='produs.html?id=argentina';">
+                    <div class="product-image">
+                        <img src="argentina/arg-away-front.png" alt="Fata Tricou Argentina Away" class="image-front">
+                        <img src="argentina/arg-away-back.png" alt="Spate Tricou Argentina Away" class="image-back">
+                        <div class="badge sale">-25%</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Tricou Home Argentina 2026</h3>
+
+                        <div class="price">
+                            <del class="dynamic-price" data-price="200">200 RON</del>
+                            <span class="dynamic-price" data-price="150">150 RON</span>
+                        </div>
+
+                        <button class="add-to-cart">Vezi produs</button>
+                    </div>
+                </div>
+
+                <!-- Produs 2 -->
+                <div class="product-card" onclick="window.location.href='produs.html?id=portugalia';"
+                    style="cursor: pointer;">
+                    <div class="product-image">
+                        <img src="portugal/port-away-front.png" alt="Fata Tricou Portugalia Away" class="image-front">
+
+                        <img src="portugal/port-away-back.png" alt="Spate Tricou Portugalia Away" class="image-back">
+                        <div class="badge sale">-25%</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Tricou Home Portugalia 2026</h3>
+                        <div class="price">
+                            <del class="dynamic-price" data-price="200">200 RON</del>
+                            <span class="dynamic-price" data-price="150">150 RON</span>
+                        </div>
+                        <button class="add-to-cart">Vezi produs</button>
+                    </div>
+                </div>
+
+                <!-- Produs 3 -->
+                <div class="product-card" onclick="window.location.href='produs.html?id=brazil';"
+                    style="cursor: pointer;">
+                    <div class="product-image">
+                        <img src="brazil/brazil-away-front.png" alt="Fata Tricou Brazil Away" class="image-front">
+
+                        <img src="brazil/brazil-away-back.png" alt="Spate Tricou Brazil Away" class="image-back">
+                        <div class="badge sale">-25%</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Tricou Home Brazil 2026</h3>
+                        <div class="price">
+                            <del class="dynamic-price" data-price="200">200 RON</del>
+                            <span class="dynamic-price" data-price="150">150 RON</span>
+                        </div>
+                        <button class="add-to-cart">Vezi produs</button>
+                    </div>
+                </div>
+
+                <!-- Produs 4 -->
+                <div class="product-card" onclick="window.location.href='produs.html?id=spania';"
+                    style="cursor: pointer;">
+                    <div class="product-image">
+                        <img src="spain/spain-home-front.png" alt="Fata Tricou Spania Away" class="image-front">
+
+                        <img src="spain/spain-home-back.png" alt="Spate Tricou Spania Away" class="image-back">
+                        <div class="badge sale">-25%</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Tricou Home Spania 2026</h3>
+                        <div class="price">
+                            <del class="dynamic-price" data-price="200">200 RON</del>
+                            <span class="dynamic-price" data-price="150">150 RON</span>
+                        </div>
+                        <button class="add-to-cart">Vezi produs</button>
+                    </div>
+                </div>
+
+
+                <!-- Produs 5 -->
+                <div class="product-card" onclick="window.location.href='produs.html?id=spania_away';"
+                    style="cursor: pointer;">
+                    <div class="product-image">
+                        <img src="spain/spain-away-front.png" alt="Fata Tricou Spania Away" class="image-front">
+
+                        <img src="spain/spain-away-back.png" alt="Spate Tricou Spania Away" class="image-back">
+                        <div class="badge sale">-25%</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Tricou Away Spania 2026</h3>
+                        <div class="price">
+                            <del class="dynamic-price" data-price="200">200 RON</del>
+                            <span class="dynamic-price" data-price="150">150 RON</span>
+                        </div>
+                        <button class="add-to-cart">Vezi produs</button>
+                    </div>
+                </div>
+                <!-- Produs 6 -->
+                <div class="product-card" onclick="window.location.href='produs.html?id=franta';"
+                    style="cursor: pointer;">
+                    <div class="product-image">
+                        <img src="france/france-away-front.png" alt="Fata Tricou Franta" class="image-front">
+
+                        <img src="france/france-away-back.png" alt="Spate Tricou Franta" class="image-back">
+                        <div class="badge sale">-25%</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Tricou Home Franta 2026</h3>
+                        <div class="price">
+                            <del class="dynamic-price" data-price="200">200 RON</del>
+                            <span class="dynamic-price" data-price="150">150 RON</span>
+                        </div>
+                        <button class="add-to-cart">Vezi produs</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section class="products-section" id="cluburi">
+        <div class="container">
+            <h2 class="section-title">Colecție Cluburi 24/25</h2>
+            <div class="products-grid">
+
+                <div class="product-card" onclick="window.location.href='produs.html?id=barca_roz';"
+                    style="cursor: pointer;">
+                    <div class="product-image">
+                        <img src="cluburi/barcelona-roz.png" alt="Fata Tricou Franta" class="image-front">
+
+                        <div class="badge sale">-25%</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Tricou Barcelona Away (Roz) 2025</h3>
+                        <div class="price">
+                            <del class="dynamic-price" data-price="200">200 RON</del>
+                            <span class="dynamic-price" data-price="150">150 RON</span>
+                        </div>
+                        <button class="add-to-cart">Vezi produs</button>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href='produs.html?id=barca_kobe';"
+                    style="cursor: pointer;">
+                    <div class="product-image">
+                        <img src="cluburi/barcelona-kobe.png" alt="Fata Tricou Franta" class="image-front">
+
+                        <img src="france/france-away-back.png" alt="Spate Tricou Franta" class="image-back">
+                        <div class="badge sale">-25%</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Tricou Barca x Kobe Bryant (Training)</h3>
+                        <div class="price">
+                            <del class="dynamic-price" data-price="200">200 RON</del>
+                            <span class="dynamic-price" data-price="150">150 RON</span>
+                        </div>
+                        <button class="add-to-cart">Vezi produs</button>
+                    </div>
+                </div>
+
+                <div class="product-card" onclick="window.location.href='produs.html?id=real_away';"
+                    style="cursor: pointer;">
+                    <div class="product-image">
+                        <img src="cluburi/madrid.png" alt="Fata Tricou Franta" class="image-front">
+
+                        <img src="france/france-away-back.png" alt="Spate Tricou Franta" class="image-back">
+                        <div class="badge sale">-25%</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Tricou Away Real Madrid 2025</h3>
+                        <div class="price">
+                            <del class="dynamic-price" data-price="200">200 RON</del>
+                            <span class="dynamic-price" data-price="150">150 RON</span>
+                        </div>
+                        <button class="add-to-cart">Vezi produs</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Subsol (Footer) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content" style="border-bottom: none; padding-bottom: 20px;">
+
+                <div class="footer-faq" style="flex: 1; max-width: 450px; padding-right: 20px;">
+                    <h3 style="color: var(--white); margin-bottom: 20px; font-size: 1.2rem; text-transform: uppercase;">
+                        Întrebări Frecvente</h3>
+
+                    <div class="faq-accordion">
+                        <details class="faq-item">
+                            <summary>Cum plasez o comandă?</summary>
+                            <div class="faq-answer">
+                                <p>Este simplu: adaugi produsele în coș și completezi formularul cu numele și email-ul
+                                    tău. Nu îți cerem datele cardului! După plasarea comenzii, te vom contacta prin
+                                    email sau WhatsApp cu link-ul securizat pentru finalizarea livrării.</p>
+                            </div>
+                        </details>
+
+                        <details class="faq-item">
+                            <summary>Unde plătesc? Pe site sau pe OLX?</summary>
+                            <div class="faq-answer">
+                                <p><strong>NU plătești nimic pe site-ul nostru.</strong> Plata se face exclusiv prin
+                                    sistemul securizat al partenerilor noștri (OLX/Vinted) sau direct la curier
+                                    (Ramburs), abia după ce ai verificat coletul.</p>
+                            </div>
+                        </details>
+
+                        <details class="faq-item">
+                            <summary>Ce înseamnă "Livrare cu Verificare"?</summary>
+                            <div class="faq-answer">
+                                <p>Înseamnă siguranță 100%. Când curierul ajunge la ușa ta, ai dreptul să deschizi
+                                    coletul timp de câteva minute pentru a verifica tricoul. Dacă nu îți place sau
+                                    mărimea nu corespunde, îl poți refuza pe loc fără să plătești nimic.</p>
+                            </div>
+                        </details>
+
+                        <details class="faq-item">
+                            <summary>Cât timp aștept până vine comanda?</summary>
+                            <div class="faq-answer">
+                                <p>Procesăm comanda în maxim 24 de ore. Odată predat curierului prin OLX, coletul ajunge
+                                    la tine în termen de 2-5 zile lucrătoare, oriunde în România.</p>
+                            </div>
+                        </details>
+
+                        <details class="faq-item">
+                            <summary>Este sigur să cumpăr prin OLX?</summary>
+                            <div class="faq-answer">
+                                <p>Este cea mai sigură metodă de comerț online din România. OLX acționează ca un garant:
+                                    banii tăi sunt protejați, iar livrarea este monitorizată oficial. Astfel, eliminăm
+                                    orice risc de fraudă sau produse neconforme.</p>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+
+                <div class="footer-logo"
+                    style="flex: 1; text-align: right; display: flex; flex-direction: column; justify-content: flex-start;">
+
+                    <img src="logonobg2.jpg" alt="Yazy Logo Mobile" class="mobile-footer-img">
+
+                    <h2>YAZY <span>JERSEY</span></h2>
+                    <p style="color: #aaaaaa; font-size: 0.95rem; margin-top: 10px;">Singurul magazin de care ai
+                        nevoie pentru echipamente premium.</p>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 YAZY JERSEY</p>
+                <div class="legal-bottom-links">
+                    <a href="retur.html">Politica de rambursare</a> &bull;
+                    <a href="confidentialitate.html">Politica de confidențialitate</a> &bull;
+                    <a href="termeni.html">Termenii serviciului</a> &bull;
+                    <a href="livrare.html">Politică de livrare</a> &bull;
+                    <a href="https://anpc.ro/" target="_blank">ANPC</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2>Coșul Meu</h2>
+            <button class="close-cart-btn" id="closeCartBtn">&times;</button>
+        </div>
+        <div class="cart-items-container" id="cartItemsContainer">
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotalPrice">0 RON</span>
+            </div>
+            <button class="cta-btn checkout-btn" id="checkoutBtn">Finalizează Comanda</button>
+        </div>
+    </div>
+    <div class="modal-overlay" id="contactModal">
+        <div class="modal-content" style="max-width: 450px;">
+            <span class="close-modal-btn" id="closeModalBtn">&times;</span>
+            <h2 style="margin-bottom: 10px;">Aproape gata! 🚀</h2>
+            <p style="font-size: 0.9rem; color: #555; text-align: left; margin-bottom: 20px;">
+                Completează datele de mai jos. Vei primi pe email în cel mai scurt timp un link personalizat și
+                securizat prin <strong>OLX</strong> pentru a finaliza plata și detaliile de livrare în maximă siguranță.
+            </p>
+
+            <form action="https://formsubmit.co/nane44stefan@gmail.com" method="POST" id="checkoutForm"
+                style="text-align: left;">
+
+                <input type="hidden" name="_subject" value="🚨 COMANDĂ NOUĂ TRICOURI!">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="Detalii_Comanda" id="formComandaAscunsa">
+                <input type="hidden" name="Total_de_Plata" id="formTotalAscuns">
+
+                <div style="margin-bottom: 15px;">
+                    <label style="font-weight: 600; font-size: 0.9rem;">Numele tău complet:</label>
+                    <input type="text" name="Nume" required
+                        style="width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 5px;">
+                </div>
+
+                <div style="margin-bottom: 15px;">
+                    <label style="font-weight: 600; font-size: 0.9rem;">Adresa ta de Email (Aici primești link-ul
+                        OLX):</label>
+                    <input type="email" name="Email" required
+                        style="width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 5px;">
+                </div>
+
+                <div style="margin-bottom: 20px;">
+                    <label style="font-weight: 600; font-size: 0.9rem;">Număr de telefon (Opțional):</label>
+                    <input type="tel" name="Telefon"
+                        style="width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 5px;">
+                </div>
+
+                <button type="submit" class="cta-btn" style="width: 100%; border: none; cursor: pointer;">Trimite
+                    Comanda</button>
+                <p
+                    style="font-size: 0.8rem; color: #888; text-align: center; margin-top: 15px; margin-bottom: 0; line-height: 1.4;">
+                    💡 <strong>Sfat:</strong> Asigură-te că datele introduse sunt corecte, pentru a te putea contacta și
+                    a-ți trimite rapid link-ul comenzii!
+                </p>
+            </form>
+        </div>
+    </div>
+    <div class="modal-overlay" id="generalContactModal">
+        <div class="modal-content">
+            <span class="close-modal-btn" id="closeGeneralModalBtn">&times;</span>
+            <h2>Contactează-ne 💬</h2>
+            <p>Ai o întrebare legată de tricouri, mărimi sau livrare? Dă-ne un mesaj pe oricare dintre platformele de
+                mai jos:</p>
+
+            <div class="social-links">
+                <a href="https://wa.me/40756522096" target="_blank" class="social-btn whatsapp">🟢 WhatsApp</a>
+                <a href="https://www.instagram.com/yazyjersey/" target="_blank" class="social-btn instagram">🟣
+                    Instagram</a>
+                <a href="https://www.tiktok.com/@yazyjersey?lang=ro-RO" target="_blank" class="social-btn tiktok">⚫
+                    TikTok</a>
+                <a href="https://www.vinted.ro/member/280040686" target="_blank" class="social-btn vinted">🛍️
+                    Vinted</a>
+
+                <a href="https://www.olx.ro/oferte/user/vnCBp/" target="_blank" class="social-btn olx">🛒 Profil OLX</a>
+            </div>
+
+            <p class="modal-footer-text">Sau trimite-ne un email la <strong>yazyjersey@gmail.com</strong></p>
+        </div>
+    </div>
+    <script src="cart.js"></script>
+    <script>
+        // 1. Definim ratele de conversie (raportate la RON)
+        // Acestea pot fi actualizate manual când dorești
+        const exchangeRates = {
+            RON: 1,
+            EUR: 0.20,  // 1 RON = ~0.20 EUR (adică 1 EUR = 5 RON)
+            USD: 0.22   // 1 RON = ~0.22 USD (adică 1 USD = 4.5 RON)
+        };
+
+        // 2. Definim simbolurile valutare
+        const currencySymbols = {
+            RON: " RON",
+            EUR: "€",
+            USD: "$"
+        };
+
+        // Selectăm meniul de monede și toate prețurile de pe site
+        const currencySwitcher = document.getElementById('currencySwitcher');
+        const priceElements = document.querySelectorAll('.dynamic-price');
+
+        // 3. Funcția care schimbă efectiv textele
+        function updatePrices(selectedCurrency) {
+            const rate = exchangeRates[selectedCurrency];
+            const symbol = currencySymbols[selectedCurrency];
+
+            priceElements.forEach(el => {
+                // Luăm prețul de bază ascuns în HTML
+                const basePrice = parseFloat(el.getAttribute('data-price'));
+
+                // Calculăm noul preț
+                const newPrice = basePrice * rate;
+
+                // Dacă e RON, nu punem zecimale. Dacă e EUR/USD, punem 2 zecimale (.00)
+                if (selectedCurrency === 'RON') {
+                    el.innerText = Math.round(newPrice) + symbol; // Ex: 150 RON
+                } else {
+                    el.innerText = symbol + newPrice.toFixed(2);  // Ex: €30.00
+                }
+            });
+        }
+
+        // 4. Ascultăm când utilizatorul schimbă opțiunea din meniu
+        currencySwitcher.addEventListener('change', function () {
+            const selectedCurrency = this.value;
+
+            // Salvăm alegerea în memoria browserului (Local Storage)
+            localStorage.setItem('preferredCurrency', selectedCurrency);
+
+            // Actualizăm prețurile
+            updatePrices(selectedCurrency);
+        });
+
+        // 5. Când se încarcă pagina, verificăm dacă utilizatorul a ales deja o monedă în trecut
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedCurrency = localStorage.getItem('preferredCurrency') || 'RON';
+
+            // Setăm meniul pe valoarea salvată
+            currencySwitcher.value = savedCurrency;
+
+            // Schimbăm prețurile conform valorii salvate
+            updatePrices(savedCurrency);
+        });
+    </script>
+</body>
+
+
+</html>
